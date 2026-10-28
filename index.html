@@ -1,0 +1,91 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racha da Quadra</title>
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <main class="container">
+        <header class="cabecalho">
+            <span class="icone">🏐</span>
+            <h1>Racha da Quadra</h1>
+            <p>Divida o aluguel de acordo com o tempo jogado.</p>
+        </header>
+
+        <section class="painel">
+            <label for="valor-aluguel">Valor total do aluguel (R$)</label>
+            <input
+                type="number"
+                id="valor-aluguel"
+                min="0.01"
+                step="0.01"
+                placeholder="Ex.: 260,00"
+            >
+            
+            <label for="pix-responsavel">Chave Pix para pagamento</label>
+            <input
+                type="text"
+                id="pix-responsavel"
+                placeholder="CPF, e-mail, telefone ou chave aleatória"
+                maxlength="150"
+            >
+
+            <div class="titulo-participantes">
+                <h2>Participantes</h2>
+                <span id="contador">0 pessoas</span>
+            </div>
+
+            <div id="lista-participantes"></div>
+
+            <button type="button" id="adicionar">
+                + Adicionar participante
+            </button>
+
+            <button type="button" id="calcular" class="botao-principal">
+                Calcular valores
+            </button>
+
+            <p id="mensagem" role="alert"></p>
+        </section>
+
+        <section id="resultado" class="resultado" hidden>
+            <h2>Resultado do rateio</h2>
+
+            <div class="resumo">
+                <div>
+                    <span>Valor do aluguel</span>
+                    <strong id="total-aluguel">R$ 0,00</strong>
+                </div>
+                <div>
+                    <span>Total de horas-pessoa</span>
+                    <strong id="total-horas">0 h</strong>
+                </div>
+            </div>
+
+            
+            <div class="pix-responsavel">
+                <span>💸 Pix para pagamento</span>
+                <strong id="pix-exibido">Não informado</strong>
+                <button type="button" id="copiar-pix">
+                    Copiar chave Pix
+                </button>
+            </div>
+
+            <div id="lista-resultados"></div>
+
+            <button type="button" id="copiar" class="botao-copiar">
+                Copiar resumo para o grupo
+            </button>
+            <p id="mensagem-copia" aria-live="polite"></p>
+        </section>
+
+        <footer>
+            Feito para facilitar o racha da galera 🏐
+        </footer>
+    </main>
+</body>
+</html>

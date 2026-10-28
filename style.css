@@ -1,0 +1,288 @@
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --verde: #16764a;
+    --verde-escuro: #105638;
+    --fundo: #f3f7f4;
+    --texto: #203329;
+    --cinza: #718078;
+    --borda: #dce6df;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: var(--fundo);
+    color: var(--texto);
+    padding: 32px 16px;
+}
+
+.container {
+    max-width: 650px;
+    margin: 0 auto;
+}
+
+.cabecalho {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.icone {
+    font-size: 46px;
+}
+
+h1 {
+    margin: 10px 0;
+    font-size: clamp(28px, 5vw, 38px);
+}
+
+.cabecalho p {
+    color: var(--cinza);
+    line-height: 1.5;
+}
+
+.painel,
+.resultado {
+    background: white;
+    border: 1px solid var(--borda);
+    border-radius: 18px;
+    padding: 24px;
+    margin-bottom: 20px;
+    box-shadow: 0 8px 24px rgba(25, 70, 45, 0.06);
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 9px;
+}
+
+input {
+    width: 100%;
+    min-width: 0;
+    padding: 12px;
+    border: 1px solid var(--borda);
+    border-radius: 9px;
+    font: inherit;
+    color: var(--texto);
+    background: white;
+}
+
+input:focus {
+    outline: 2px solid var(--verde);
+    outline-offset: 1px;
+}
+
+.titulo-participantes {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin: 28px 0 16px;
+}
+
+h2 {
+    font-size: 20px;
+}
+
+#contador {
+    color: var(--cinza);
+    font-size: 13px;
+}
+
+.participante {
+    display: grid;
+    grid-template-columns: minmax(0, 1fr) 105px 38px;
+    gap: 10px;
+    align-items: end;
+    margin-bottom: 12px;
+}
+
+.campo label {
+    font-size: 12px;
+    color: var(--cinza);
+    margin-bottom: 6px;
+}
+
+.campo input {
+    padding: 11px 9px;
+}
+
+.remover {
+    width: 38px;
+    height: 42px;
+    border: none;
+    border-radius: 9px;
+    background: #fff0ef;
+    color: #b52e28;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+button {
+    width: 100%;
+    padding: 13px;
+    border: none;
+    border-radius: 10px;
+    font-size: 15px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s, transform 0.2s;
+}
+
+button:hover {
+    transform: translateY(-1px);
+}
+
+#adicionar {
+    background: #e8f4ec;
+    color: var(--verde-escuro);
+    margin-top: 6px;
+}
+
+.botao-principal {
+    background: var(--verde);
+    color: white;
+    margin-top: 14px;
+}
+
+.botao-principal:hover {
+    background: var(--verde-escuro);
+}
+
+#mensagem,
+#mensagem-copia {
+    color: #b52e28;
+    font-size: 14px;
+    margin-top: 12px;
+}
+
+.resultado h2 {
+    margin-bottom: 18px;
+}
+
+.resumo {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+    margin-bottom: 22px;
+}
+
+.resumo div {
+    background: var(--fundo);
+    padding: 16px;
+    border-radius: 12px;
+}
+
+.resumo span {
+    display: block;
+    color: var(--cinza);
+    font-size: 12px;
+    margin-bottom: 8px;
+}
+
+.resumo strong {
+    font-size: 19px;
+    overflow-wrap: anywhere;
+}
+
+.item-resultado {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    padding: 15px 0;
+    border-bottom: 1px solid var(--borda);
+}
+
+.detalhes {
+    min-width: 0;
+}
+
+.nome-resultado {
+    font-weight: bold;
+    overflow-wrap: anywhere;
+}
+
+.horas-resultado {
+    color: var(--cinza);
+    font-size: 13px;
+    margin-top: 5px;
+}
+
+.valor-resultado {
+    color: var(--verde);
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.botao-copiar {
+    margin-top: 20px;
+    background: var(--verde);
+    color: white;
+}
+
+footer {
+    text-align: center;
+    color: var(--cinza);
+    font-size: 13px;
+    padding: 8px;
+}
+
+[hidden] {
+    display: none !important;
+}
+
+@media (max-width: 420px) {
+    body {
+        padding: 22px 10px;
+    }
+
+    .painel,
+    .resultado {
+        padding: 17px;
+    }
+
+    .participante {
+        grid-template-columns: minmax(0, 1fr) 84px 34px;
+        gap: 7px;
+    }
+
+    .remover {
+        width: 34px;
+    }
+
+    .resumo strong {
+        font-size: 16px;
+    }
+}
+
+
+.pix-responsavel {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #e8f4ec;
+    padding: 16px;
+    border-radius: 12px;
+    margin-bottom: 20px;
+}
+
+.pix-responsavel span {
+    font-size: 13px;
+    color: #105638;
+}
+
+.pix-responsavel strong {
+    overflow-wrap: anywhere;
+}
+
+#copiar-pix {
+    background: white;
+    color: #105638;
+    border: 1px solid #c9dfd0;
+}
